@@ -3,7 +3,6 @@ Stanford CS224 2019 class.
 """
 import torch.nn as nn
 
-
 class ModelEmbeddings(nn.Module):
     """
     Class that converts input words to their embeddings.
@@ -30,6 +29,8 @@ class ModelEmbeddings(nn.Module):
 
         # YOUR CODE HERE
         # TODO - Initialize the following variables:
+        self.source = nn.Embedding(len(vocab.src), embed_size, padding_idx=src_pad_token_idx)
+        self.target = nn.Embedding(len(vocab.tgt), embed_size, padding_idx=tgt_pad_token_idx)
         # self.source (Embedding Layer for source language)
         # self.target (Embedding Layer for target langauge)
         ###
